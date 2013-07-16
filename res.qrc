@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Manipulator.qml</file>
+        <file>lineV.svg</file>
+        <file>button.svg</file>
+        <file>button_pressed.svg</file>
+        <file>background.svg</file>
+        <file>lineH.svg</file>
+        <file>pointer.svg</file>
+    </qresource>
+</RCC>
