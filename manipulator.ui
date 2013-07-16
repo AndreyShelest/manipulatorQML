@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>314</width>
     <height>350</height>
    </rect>
   </property>
@@ -28,35 +28,52 @@
        <height>300</height>
       </size>
      </property>
-     <zorder>splitter</zorder>
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QSplitter" name="splitter">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="lbl_PosX">
-      <property name="text">
-       <string>X:</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="posX">
-      <property name="maximum">
-       <number>300</number>
-      </property>
-     </widget>
-     <widget class="QLabel" name="lbl_PosY">
-      <property name="text">
-       <string> Y:</string>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="posY">
-      <property name="maximum">
-       <number>300</number>
-      </property>
-     </widget>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lbl_PosX">
+       <property name="text">
+        <string>X:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="posX">
+       <property name="maximum">
+        <number>300</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lbl_PosY">
+       <property name="text">
+        <string> Y:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="posY">
+       <property name="maximum">
+        <number>300</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

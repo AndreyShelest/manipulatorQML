@@ -11,4 +11,8 @@
 *.lai
 *.la
 *.a
-*.moc
+
+#Qt dinamic objects
+ui_*
+moc_*
+qrc_*
