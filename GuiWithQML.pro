@@ -4,12 +4,14 @@
 #
 #-------------------------------------------------
 
-QT       += core gui declarative
+QT       += core gui quick qml
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GuiWithQML
 TEMPLATE = app
-
+qtHaveModule(widgets) {
+    QT += widgets
+}
 
 SOURCES += main.cpp \
     manipulator.cpp

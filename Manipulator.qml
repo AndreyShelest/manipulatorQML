@@ -1,4 +1,13 @@
-import QtQuick 1.1
+import QtQuick 2.1
+import QtQuick.Controls 1.0
+import QtQuick.Layouts 1.0
+import QtQuick.Dialogs 1.0
+import QtQuick.Window 2.1
+ApplicationWindow {
+    width: 300
+    height: 300
+    minimumWidth: 300
+    minimumHeight: 300
 
 Image {
     id:back
@@ -210,7 +219,7 @@ Image {
         readOnly:true
 
     }
-
+}
     function moveButton()
     {
         button.centerX=Math.round(button.x+button.r);

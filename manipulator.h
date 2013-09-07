@@ -2,10 +2,12 @@
 #define MANIPULATOR_H
 
 #include <QDialog>
-#include <QDeclarativeContext>
-#include<QDeclarativeView>
+#include <QQmlComponent>
+#include <QWidget>
 #include<QVBoxLayout>
-
+#include <QtQml>
+#include <QQuickItem>
+#include <QQuickWindow>
 namespace Ui {
 class Manipulator;
 class CustomPalette ;
@@ -46,8 +48,11 @@ void slot_pushXcoord(int centerX); //push coords to QML file
 void slot_pushYcoord(int centerY);
 private:
     Ui::Manipulator *ui;
-QDeclarativeView *qmlView;
-    QObject *Root;//корневой элемент QML модели
+     QQmlEngine *engine;
+     QQmlComponent *qmlView;
+     QQuickWindow *window;
+     QVBoxLayout *layout;
+    QQmlContext *Root;//корневой элемент QML модели
 };
 
 #endif // MANIPULATOR_H
