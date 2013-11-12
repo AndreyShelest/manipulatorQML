@@ -23,7 +23,8 @@ FORMS    += \
     manipulator.ui
 
 OTHER_FILES += \
-    Manipulator.qml
+    Manipulator.qml \
+    MButton.qml
 
 RESOURCES += \
     res.qrc

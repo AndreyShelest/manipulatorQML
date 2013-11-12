@@ -7,5 +7,6 @@
         <file>background.svg</file>
         <file>lineH.svg</file>
         <file>pointer.svg</file>
+        <file>MButton.qml</file>
     </qresource>
 </RCC>

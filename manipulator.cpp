@@ -27,7 +27,6 @@ ui->qmlWgt->setLayout(layout);
 //this->setLayout(layout);
 connect(ui->posX,SIGNAL(valueChanged(int)),this,SLOT(slot_setXcoord(int)));
 connect(ui->posY,SIGNAL(valueChanged(int)),this,SLOT(slot_setYcoord(int)));
-//connect(window, SIGNAL(), window, SLOT());
 }
 
 Manipulator::~Manipulator()
@@ -46,20 +45,24 @@ CustomPalette::CustomPalette()
 void Manipulator::slot_setXcoord(int centerX)
 {
         //Найдем button
-            QObject* button = NULL;
-            button = window->findChild<QObject*>("button");
-            int posx=centerX-button->property("r").toInt();
-            button->setProperty("x",QString::number(posx));
-
+//            QObject* button = NULL;
+//            button = window->findChild<QObject*>("button");
+//            if(button){
+//            int posx=centerX-button->property("btn_center").toInt();
+//            button->setProperty("x",QString::number(posx));
+//}
+//            else qDebug()<<"button in QML no found";
 }
 void Manipulator::slot_setYcoord(int centerY)
 {
         //Найдем button
-            QObject* button = NULL;
-            button=window->findChild<QObject*>("button");
-           int posy=centerY-button->property("r").toInt();
-           button->setProperty("y",QString::number(posy));
-
+//            QObject* button = NULL;
+//            button=window->findChild<QObject*>("button");
+//            if (button){
+//           int posy=centerY-button->property("btn_center").toInt();
+//           button->setProperty("y",QString::number(posy));
+//}
+//            else qDebug()<<"button in QML no found";
 }
 
 void Manipulator::slot_pushXcoord(int centerX)
