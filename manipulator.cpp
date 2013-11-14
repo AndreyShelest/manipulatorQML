@@ -27,6 +27,9 @@ ui->qmlWgt->setLayout(layout);
 //this->setLayout(layout);
 connect(ui->posX,SIGNAL(valueChanged(int)),this,SLOT(slot_setXcoord(int)));
 connect(ui->posY,SIGNAL(valueChanged(int)),this,SLOT(slot_setYcoord(int)));
+connect(window,SIGNAL(movedToX(int)),this,SLOT(slot_pushXcoord(int)));
+connect(window,SIGNAL(movedToY(int)),this,SLOT(slot_pushYcoord(int)));
+
 }
 
 Manipulator::~Manipulator()
@@ -45,24 +48,30 @@ CustomPalette::CustomPalette()
 void Manipulator::slot_setXcoord(int centerX)
 {
         //Найдем button
-//            QObject* button = NULL;
-//            button = window->findChild<QObject*>("button");
-//            if(button){
-//            int posx=centerX-button->property("btn_center").toInt();
-//            button->setProperty("x",QString::number(posx));
-//}
-//            else qDebug()<<"button in QML no found";
+            QObject* button = NULL;
+            button = window->findChild<QObject*>("button");
+            if(button){
+                QVariant returnedValue;
+                QVariant posX = centerX;
+                QMetaObject::invokeMethod(button, "moveToX",
+                        Q_RETURN_ARG(QVariant, returnedValue),
+                        Q_ARG(QVariant, posX));
+}
+            else qDebug()<<"button in QML no found";
 }
 void Manipulator::slot_setYcoord(int centerY)
 {
         //Найдем button
-//            QObject* button = NULL;
-//            button=window->findChild<QObject*>("button");
-//            if (button){
-//           int posy=centerY-button->property("btn_center").toInt();
-//           button->setProperty("y",QString::number(posy));
-//}
-//            else qDebug()<<"button in QML no found";
+            QObject* button = NULL;
+            button=window->findChild<QObject*>("button");
+            if (button){
+                QVariant returnedValue;
+                QVariant posY = centerY;
+                QMetaObject::invokeMethod(button, "moveToY",
+                        Q_RETURN_ARG(QVariant, returnedValue),
+                        Q_ARG(QVariant, posY));
+}
+            else qDebug()<<"button in QML no found";
 }
 
 void Manipulator::slot_pushXcoord(int centerX)

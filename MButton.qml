@@ -13,7 +13,7 @@ Rectangle {
     property int posX: x+btn_center
     property int posY: y+btn_center
 
-    property int btn_center: width/2
+    property int btn_center: Math.round(width/2)
     property int max_X: 65535
     property int max_Y: 65535
     property int min_X: -65535
@@ -132,12 +132,12 @@ Rectangle {
 
     // Set an 'elastic' behavior on the focusRect's x property.
     Behavior on x {
-        NumberAnimation { easing.type: Easing.OutElastic; easing.amplitude: 2.25; easing.period: 2; duration: 500 }
+        NumberAnimation { easing.type: Easing.OutElastic; easing.amplitude: 2; easing.period: 2; duration: 500 }
     }
 
     // Set an 'elastic' behavior on the focusRect's y property.
     Behavior on y {
-        NumberAnimation { easing.type: Easing.OutElastic; easing.amplitude: 2.25; easing.period: 2.0; duration: 500 }
+        NumberAnimation { easing.type: Easing.OutElastic; easing.amplitude: 2; easing.period: 2.0; duration: 500 }
     }
     //Строка ввода
     Rectangle {
@@ -197,9 +197,19 @@ Rectangle {
 resetTextRect(true)
         textinputRect.visible=false
     }
-    function moveToXY (posX,posY){
-        x = posX-btn_center
-        y = posY-btn_center
+    function moveToXY (inX,inY){
+        x = inX-btn_center
+        y = inY-btn_center
+        resetTextRect(true)
+        textinputRect.visible=false
+    }
+    function moveToX (inX){
+        x = inX-btn_center
+        resetTextRect(true)
+        textinputRect.visible=false
+    }
+    function moveToY (inY){
+        y = inY-btn_center
         resetTextRect(true)
         textinputRect.visible=false
     }

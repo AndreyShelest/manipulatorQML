@@ -4,8 +4,11 @@ import QtQuick.Controls 1.0
 ApplicationWindow {
     width: 300
     height: 300
+    id: mainQml
     minimumWidth: 300
     minimumHeight: 300
+    signal movedToX(int x)
+    signal movedToY(int y)
     Rectangle {
         id: rectangle1
    anchors.fill: parent
@@ -79,8 +82,8 @@ ApplicationWindow {
             dragMouse.maximumY: max_Y
             dragMouse.minimumY: min_Y
             //привязка к C++
-        onXChanged: window.slot_pushXcoord(greybutton.posX)
-        onYChanged:window.slot_pushYcoord(greybutton.posY)
+        onXChanged: mainQml.movedToX(greybutton.posX)
+        onYChanged: mainQml.movedToY(greybutton.posY)
 
             text: ""
             clGradientStop1: "#226024"
