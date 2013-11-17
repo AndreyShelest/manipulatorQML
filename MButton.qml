@@ -24,7 +24,9 @@ Rectangle {
     width: 85
     height: 23
 
-    border.color: "Wheat"
+    //determines the color of the button by using the conditional operator
+    border.color: mouse.pressed ? Qt.darker("Wheat", 1.5) : "Wheat"
+
     gradient: Gradient { // добавление градиента
 
         GradientStop {
@@ -119,8 +121,8 @@ Rectangle {
         drag.axis: Drag.XandYAxis
         anchors.fill: greyButton
         hoverEnabled: true
-        onEntered: mouseEnterAnim.start()
-        onExited: mouseExitAnim.start()
+        onEntered: !mouse.pressed ? mouseEnterAnim.start(): undefined
+        onExited: !mouse.pressed ? mouseExitAnim.start(): undefined
         onPressed: mouseClickAnim.start()
         onReleased: mouseEnterAnim.start()
         onDoubleClicked: {

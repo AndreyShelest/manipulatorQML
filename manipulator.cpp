@@ -25,8 +25,8 @@ layout = new QVBoxLayout(this);
 layout->addWidget(QWidget::createWindowContainer(window));
 ui->qmlWgt->setLayout(layout);
 //this->setLayout(layout);
-connect(ui->posX,SIGNAL(valueChanged(int)),this,SLOT(slot_setXcoord(int)));
-connect(ui->posY,SIGNAL(valueChanged(int)),this,SLOT(slot_setYcoord(int)));
+//connect(ui->posX,SIGNAL(valueChanged(int)),this,SLOT(slot_setXcoord(int)));
+//connect(ui->posY,SIGNAL(valueChanged(int)),this,SLOT(slot_setYcoord(int)));
 connect(window,SIGNAL(movedToX(int)),this,SLOT(slot_pushXcoord(int)));
 connect(window,SIGNAL(movedToY(int)),this,SLOT(slot_pushYcoord(int)));
 

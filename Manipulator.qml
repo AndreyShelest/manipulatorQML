@@ -66,10 +66,6 @@ ApplicationWindow {
         MButton {
             id: greybutton
             objectName: "button"
-            x: parent.width/2-btn_center
-            y: parent.height/2-btn_center
-            width: 25
-            height: width
             radius: width*0.4
 
             max_X: parent.width-btn_center
@@ -86,6 +82,8 @@ ApplicationWindow {
         onYChanged: mainQml.movedToY(greybutton.posY)
 
             text: ""
+            anchors.fill: parent
+            clip: false
             clGradientStop1: "#226024"
             clGradientStop0: "#85dd86"
         }
