@@ -16,3 +16,6 @@
 ui_*
 moc_*
 qrc_*
+
+#QtProject  User files
+*.user* 
